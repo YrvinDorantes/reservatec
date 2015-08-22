@@ -6,7 +6,6 @@ class CreateReservations < ActiveRecord::Migration
       t.text :guest
       t.integer :status
       t.string :userapproved
-      t.references :user, index: true, foreign_key: true
 
       t.timestamps null: false
     end
