@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150823053203) do
+ActiveRecord::Schema.define(version: 20150823072923) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,8 +69,28 @@ ActiveRecord::Schema.define(version: 20150823053203) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "stuffs", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "cuantity"
+    t.float    "cost"
+    t.integer  "status"
+    t.integer  "role_id"
+    t.integer  "dayoff_id"
+    t.integer  "localization_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "stuffs", ["dayoff_id"], name: "index_stuffs_on_dayoff_id", using: :btree
+  add_index "stuffs", ["localization_id"], name: "index_stuffs_on_localization_id", using: :btree
+  add_index "stuffs", ["role_id"], name: "index_stuffs_on_role_id", using: :btree
+
   add_foreign_key "places", "categories"
   add_foreign_key "places", "dayoffs"
   add_foreign_key "places", "localizations"
   add_foreign_key "places", "roles"
+  add_foreign_key "stuffs", "dayoffs"
+  add_foreign_key "stuffs", "localizations"
+  add_foreign_key "stuffs", "roles"
 end

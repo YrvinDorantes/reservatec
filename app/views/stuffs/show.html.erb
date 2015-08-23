@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @stuff.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @stuff.description %>
+</p>
+
+<p>
+  <strong>Cuantity:</strong>
+  <%= @stuff.cuantity %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @stuff.cost %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @stuff.status %>
+</p>
+
+<p>
+  <strong>Role:</strong>
+  <%= @stuff.role %>
+</p>
+
+<p>
+  <strong>Dayoff:</strong>
+  <%= @stuff.dayoff %>
+</p>
+
+<p>
+  <strong>Localization:</strong>
+  <%= @stuff.localization %>
+</p>
+
+<%= link_to 'Edit', edit_stuff_path(@stuff) %> |
+<%= link_to 'Back', stuffs_path %>
