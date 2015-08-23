@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :users
+
   has_many :reservations, as: :reservable
   has_many :place_reservations, through: :reservations, source: :place
   has_many :stuff_reservations, through: :reservations, source: :stuff
