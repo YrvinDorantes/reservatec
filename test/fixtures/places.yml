@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  capacity: 1
+  cost: 9.99
+  goods: MyText
+  latitude: 1.5
+  longitude: 1.5
+  status: 1
+  category_id: 
+  role_id: 
+  dayoff_id: 
+  localization_id: 
+
+two:
+  name: MyString
+  description: MyText
+  capacity: 1
+  cost: 9.99
+  goods: MyText
+  latitude: 1.5
+  longitude: 1.5
+  status: 1
+  category_id: 
+  role_id: 
+  dayoff_id: 
+  localization_id: 

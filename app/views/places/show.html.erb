@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @place.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @place.description %>
+</p>
+
+<p>
+  <strong>Capacity:</strong>
+  <%= @place.capacity %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @place.cost %>
+</p>
+
+<p>
+  <strong>Goods:</strong>
+  <%= @place.goods %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @place.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @place.longitude %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @place.status %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @place.category %>
+</p>
+
+<p>
+  <strong>Role:</strong>
+  <%= @place.role %>
+</p>
+
+<p>
+  <strong>Dayoff:</strong>
+  <%= @place.dayoff %>
+</p>
+
+<p>
+  <strong>Localization:</strong>
+  <%= @place.localization %>
+</p>
+
+<%= link_to 'Edit', edit_place_path(@place) %> |
+<%= link_to 'Back', places_path %>

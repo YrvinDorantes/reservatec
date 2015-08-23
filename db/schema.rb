@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150822192539) do
+ActiveRecord::Schema.define(version: 20150823053203) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,28 @@ ActiveRecord::Schema.define(version: 20150822192539) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "places", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "capacity"
+    t.decimal  "cost"
+    t.text     "goods"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.integer  "status"
+    t.integer  "category_id"
+    t.integer  "role_id"
+    t.integer  "dayoff_id"
+    t.integer  "localization_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "places", ["category_id"], name: "index_places_on_category_id", using: :btree
+  add_index "places", ["dayoff_id"], name: "index_places_on_dayoff_id", using: :btree
+  add_index "places", ["localization_id"], name: "index_places_on_localization_id", using: :btree
+  add_index "places", ["role_id"], name: "index_places_on_role_id", using: :btree
+
   create_table "roles", force: :cascade do |t|
     t.string   "role"
     t.text     "description"
@@ -47,4 +69,8 @@ ActiveRecord::Schema.define(version: 20150822192539) do
     t.datetime "updated_at",  null: false
   end
 
+  add_foreign_key "places", "categories"
+  add_foreign_key "places", "dayoffs"
+  add_foreign_key "places", "localizations"
+  add_foreign_key "places", "roles"
 end
