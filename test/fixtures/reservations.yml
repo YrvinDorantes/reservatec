@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  startdate: 2015-08-23 03:07:57
+  enddate: 2015-08-23 03:07:57
+  guest: MyText
+  status: 1
+  userapproved: MyString
+  user_id: 
+
+two:
+  startdate: 2015-08-23 03:07:57
+  enddate: 2015-08-23 03:07:57
+  guest: MyText
+  status: 1
+  userapproved: MyString
+  user_id: 
