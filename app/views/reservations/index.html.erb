@@ -2,6 +2,18 @@
 
 <h1>Listing Reservations</h1>
 
+<%= form_tag places_path, :method=>'get' do %>
+  <%= label_tag :category_id %>
+  <%= select_tag "category_id", options_from_collection_for_select(Category.all, "id", "description") %>
+  <%= label_tag :startdate %>
+  <%= select_datetime(Date.current, prefix: 'startdate') %>
+  <%= label_tag :enddate %>
+  <%= select_datetime(Date.current, prefix: 'enddate') %>
+  <%= label_tag :guest %>
+  <%= text_area_tag :guest %>
+  <%= submit_tag 'Buscar Disponibilidad' %>
+<% end %>
+
 <table>
   <thead>
     <tr>
