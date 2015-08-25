@@ -30,4 +30,5 @@ Place.create(name:"Sala Sentido Humano", description:"Sala de juntas en el edifi
 Place.create(name:"Sala Sentido Humano", description:"Sala de juntas en el edificio D Piso 2", capacity:8, cost:0, goods:"Proyector, Pantalla", latitude:0, longitude:0, status:0, category:Category.first, role:Role.fourth, dayoff:Dayoff.second, localization:Localization.last)
 Reservation.create(startdate:Time.now, enddate:Time.now, guest:"y.dorantes@itesm.mx, rafagarciafdz@itesm.mx", status:0, userapproved:"laura@itesm.mx", user:User.first, reservable:Place.first)
 #Reservation.create(startdate:Time.now, enddate:Time.now, guest:"y.dorantes@itesm.mx, rafagarciafdz@itesm.mx", status:0, userapproved:"laura@itesm.mx", user:User.second, reservable:Place.second)
-#Reservation.create(startdate:Time.now, enddate:Time.now, guest:"y.dorantes@itesm.mx, rafagarciafdz@itesm.mx", status:0, userapproved:"laura@itesm.mx", user:User.third, reservable:Place.third)
+#Reservation.create(startdate:Time.now, enddate:Time.now, guest:"y.dorantes@itesm.mx, rafagarciafdz@itesm.mx", status:0, userapproved:"laura@itesm.mx", user:User.third, reservable:Place.third)AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')

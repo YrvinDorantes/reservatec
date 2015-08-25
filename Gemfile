@@ -16,6 +16,8 @@ gem 'coffee-rails', '~> 4.1.0'
 
 #Devise
 gem 'devise'
+#Activeadmin
+gem 'activeadmin', github: 'activeadmin'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

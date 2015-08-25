@@ -7,8 +7,8 @@ class User < ActiveRecord::Base
   belongs_to :role
 
   has_many :reservations, as: :reservable
-  has_many :place_reservations, through: :reservations, source: :place
-  has_many :stuff_reservations, through: :reservations, source: :stuff
+  has_many :place_reservations, through: :reservations, source: :reservable, source_type: 'Place'
+  has_many :stuff_reservations, through: :reservations, source: :reservable, source_type: 'Stuff'
 
   before_save :default_values
 
