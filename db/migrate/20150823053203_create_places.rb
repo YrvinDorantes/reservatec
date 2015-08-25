@@ -5,7 +5,7 @@ class CreatePlaces < ActiveRecord::Migration
       t.text :description
       t.integer :capacity
       t.decimal :cost
-      t.text :goods
+      t.text :goods, array: true, default: []
       t.float :latitude
       t.float :longitude
       t.integer :status

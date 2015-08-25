@@ -56,9 +56,9 @@ ActiveRecord::Schema.define(version: 20150825085845) do
   end
 
   create_table "dayoffs", force: :cascade do |t|
-    t.text     "day"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "day",        default: [],              array: true
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "localizations", force: :cascade do |t|
@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(version: 20150825085845) do
     t.text     "description"
     t.integer  "capacity"
     t.decimal  "cost"
-    t.text     "goods"
+    t.text     "goods",           default: [],              array: true
     t.float    "latitude"
     t.float    "longitude"
     t.integer  "status"
@@ -86,8 +86,8 @@ ActiveRecord::Schema.define(version: 20150825085845) do
     t.integer  "role_id"
     t.integer  "dayoff_id"
     t.integer  "localization_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   add_index "places", ["category_id"], name: "index_places_on_category_id", using: :btree
