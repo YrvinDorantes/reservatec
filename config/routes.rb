@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   resources :reservations
   devise_for :users
   resources :stuffs
-  resources :places
+  resources :places do
+    member do
+      get 'reservation'
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

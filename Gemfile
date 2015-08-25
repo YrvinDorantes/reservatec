@@ -18,6 +18,10 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'devise'
 #Activeadmin
 gem 'activeadmin', github: 'activeadmin'
+#datepicker con hora
+gem 'jquery-datetimepicker-rails'
+#datepicker sin hora
+gem 'bootstrap-datepicker-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

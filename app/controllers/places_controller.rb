@@ -61,6 +61,15 @@ class PlacesController < ApplicationController
     end
   end
 
+  def reservation
+    #byebug
+    set_place
+    @reserve = Reservation.find_or_initialize_by(startdate: params[:startdate], enddate: params[:enddate], status:0, userapproved: 'pendiente', guest: params[:guest], user: current_user, reservable: @place)
+
+    return destroy_and_redirect if @reserve.persisted?
+    save_and_redirect
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_place
@@ -69,6 +78,19 @@ class PlacesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def place_params
-      params.require(:place).permit(:name, :description, :capacity, :cost, :goods, :latitude, :longitude, :status, :category_id, :role_id, :dayoff_id, :localization_id)
+      params.require(:place).permit(:name, :description, :capacity, :cost, :goods, :latitude, :longitude, :status, :category_id, :role_id, :dayoff_id, :localization_id, :guest, :startdate, :enddate)
+    end
+
+    def destroy_and_redirect
+      @reserve.destroy
+      redirect_to @reserve, notice: "Tu reservación ha sido anulado"
+    end
+
+    def save_and_redirect
+        if @reserve.save
+        redirect_to root_path, notice: "Tu reservacion fue creada exitosamente"
+      elsif
+        redirect_to @reserve, notice: @reserve.errors.full_messages.join(", ")
+      end
     end
 end

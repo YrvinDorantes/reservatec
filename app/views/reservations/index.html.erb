@@ -3,15 +3,15 @@
 <h1>Listing Reservations</h1>
 
 <%= form_tag places_path, :method=>'get' do %>
-  <%= label_tag :category_id %>
-  <%= select_tag "category_id", options_from_collection_for_select(Category.all, "id", "description") %>
-  <%= label_tag :startdate %>
-  <%= select_datetime(Date.current, prefix: 'startdate') %>
-  <%= label_tag :enddate %>
-  <%= select_datetime(Date.current, prefix: 'enddate') %>
-  <%= label_tag :guest %>
-  <%= text_area_tag :guest %>
-  <%= submit_tag 'Buscar Disponibilidad' %>
+<%= label_tag :category_id %>
+<%= select_tag "category_id", options_from_collection_for_select(Category.all, "id", "description") %>
+<%= label_tag :startdate %>
+<input type='text' class="form-control" name="startdate" id='datetimepickerstart' <%= @startdate %> />
+<%= label_tag :enddate %>
+<input type='text' class="form-control" name="enddate" id='datetimepickerend' <%= @enddate %> />
+<%= label_tag :guest %>
+<%= text_area_tag :guest %>
+<%= submit_tag 'Buscar Disponibilidad' %>
 <% end %>
 
 <table>
@@ -29,21 +29,31 @@
 
   <tbody>
     <% @reservations.each do |reservation| %>
-      <tr>
-        <td><%= reservation.startdate %></td>
-        <td><%= reservation.enddate %></td>
-        <td><%= reservation.guest %></td>
-        <td><%= reservation.status %></td>
-        <td><%= reservation.userapproved %></td>
-        <td><%= reservation.user %></td>
-        <td><%= link_to 'Show', reservation %></td>
-        <td><%= link_to 'Edit', edit_reservation_path(reservation) %></td>
-        <td><%= link_to 'Destroy', reservation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <tr>
+      <td><%= reservation.startdate %></td>
+      <td><%= reservation.enddate %></td>
+      <td><%= reservation.guest %></td>
+      <td><%= reservation.status %></td>
+      <td><%= reservation.userapproved %></td>
+      <td><%= reservation.user.email %></td>
+      <td><%= link_to 'Show', reservation %></td>
+      <td><%= link_to 'Edit', edit_reservation_path(reservation) %></td>
+      <td><%= link_to 'Destroy', reservation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
     <% end %>
   </tbody>
 </table>
-
+<p><%= @fecha1 %></p>
 <br>
 
 <%= link_to 'New Reservation', new_reservation_path %>
+
+<script type="text/javascript">
+
+  $(document).ready(function(){
+    $('#datetimepickerstart').datetimepicker();
+    $('#datetimepickerend').datetimepicker();
+    $('#datepicker').datepicker();
+  });
+
+</script>

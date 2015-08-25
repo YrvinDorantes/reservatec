@@ -3,5 +3,5 @@ class Reservation < ActiveRecord::Base
 
   belongs_to :reservable, polymorphic: true
 
-  enum status: [:"Reservando...", :"Cancelada", :"Pendiente", :"Aceptada", :"Finalizada"]
+  enum status: [:"Pendiente", :"Cancelada", :"Aceptada", :"Finalizada"]
 end

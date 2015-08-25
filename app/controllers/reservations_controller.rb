@@ -5,7 +5,7 @@ class ReservationsController < ApplicationController
   # GET /reservations
   # GET /reservations.json
   def index
-    @reservations = Reservation.all
+    @reservations = Reservation.where(user: current_user)
   end
 
   # GET /reservations/1
