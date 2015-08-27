@@ -1,0 +1,68 @@
+<script type="text/javascript">//<![CDATA[
+
+$(function () {
+    $('#container').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Cantidad de reservaciones por mes'
+        },
+        subtitle: {
+            text: ''
+        },
+        xAxis: {
+            categories: [
+                'Jul',
+                'Aug'
+            ],
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Reservaciones'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Sala D-133',
+            data: [55, 71]
+
+        }, {
+            name: 'Sala D-111',
+            data: [83, 78]
+
+        }, {
+            name: 'Sala D-123',
+            data: [48, 38]
+
+        }, {
+            name: 'Sala D-123',
+            data: [48, 72]
+
+        }, {
+            name: 'Sala VITI',
+            data: [46, 51]
+
+        }]
+    });
+});
+//]]> 
+
+</script>
+
+<div id="container" style="max-width: 500px; height: 400px; margin: 0 auto"></div>

@@ -5,6 +5,7 @@ class PlacesController < ApplicationController
   # GET /places.json
   def index
     @places = Place.all
+    @query = Place.query("2015-08-27 07:00:00", "2015-08-27 08:00:00")
   end
 
   # GET /places/1

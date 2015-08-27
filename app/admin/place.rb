@@ -32,6 +32,8 @@ index do
 		d.dayoff.day
 	end	
 	actions
+
+	render partial: '../views/admin/place/charts'
 end
 
 form do |f|
