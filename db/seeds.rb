@@ -59,7 +59,7 @@ Place.create(name:"Sala VITI", description:"", capacity:10, cost:0, goods:"Proye
 # 		reservable:Place.last
 # 		)
 # end
-Reservation.create(startdate:"2015-08-31 10:00:00", enddate:"2015-08-30 13:00:00", guest:"y.dorantes@itesm.mx, rafagarciafdz@itesm.mx", status:0, userapproved:"", user:User.first, reservable:Place.second)
+Reservation.create(startdate:"2015-08-31 10:00:00", enddate:"2015-08-31 13:00:00", guest:"y.dorantes@itesm.mx, rafagarciafdz@itesm.mx", status:0, userapproved:"", user:User.first, reservable:Place.second)
 Reservation.create(startdate:"2015-08-31 08:00:00", enddate:"2015-08-31 10:00:00", guest:"y.dorantes@itesm.mx, rafagarciafdz@itesm.mx", status:0, userapproved:"", user:User.first, reservable:Place.third)
 Reservation.create(startdate:"2015-08-31 09:00:00", enddate:"2015-08-31 11:00:00", guest:"y.dorantes@itesm.mx, rafagarciafdz@itesm.mx", status:0, userapproved:"", user:User.first, reservable:Place.first)
 Reservation.create(startdate:"2015-08-31 08:00:00", enddate:"2015-08-31 09:00:00", guest:"y.dorantes@itesm.mx, rafagarciafdz@itesm.mx", status:0, userapproved:"", user:User.first, reservable:Place.first)

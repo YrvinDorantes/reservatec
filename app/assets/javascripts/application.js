@@ -17,3 +17,6 @@
 
 //= require jquery.datetimepicker
 //= require bootstrap-datepicker
+
+//= require fullcalendar/lib/moment.min
+//= require fullcalendar/fullcalendar
