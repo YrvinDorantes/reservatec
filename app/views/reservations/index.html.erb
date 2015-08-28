@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Reservations</h1>
+<h1>Buscar Reservaciones</h1>
 
 <%= form_tag places_path, :method=>'get' do %>
 <%= label_tag :category_id %>
@@ -13,6 +13,15 @@
 <%= text_area_tag :guest %>
 <%= submit_tag 'Buscar Disponibilidad' %>
 <% end %>
+
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    Panel content
+  </div>
+  <div class="panel-footer">Panel footer</div>
+</div>
+
 
 <table>
   <thead>
@@ -47,8 +56,6 @@
 <br>
 
 <%= render 'fullcalendar' %>
-
-<%= link_to 'New Reservation', new_reservation_path %>
 
 <script type="text/javascript">
 
