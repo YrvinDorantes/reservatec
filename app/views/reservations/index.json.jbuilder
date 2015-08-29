@@ -10,6 +10,7 @@ json.array!(@reservations) do |reservation|
     json.color 'green'
   end
   if (reservation.startdate > Time.now)
-    json.color 'blue'
+    json.color '#378006'
   end
+  json.title reservation.reservable.name
 end

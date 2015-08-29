@@ -1,64 +1,78 @@
 <p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
 
-<p>
-  <strong>Name:</strong>
-  <%= @place.name %>
-</p>
+     <img class="img-responsive img-rounded" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/600px-No_image_available.svg.png" alt="No photo">
+   </div>
+ </div>
+ <br>
+ <div class="row">
+   <div class="col-md-3">
+    <p>
+      <strong><%= @place.name %></strong>
+    </p>
+    <br>
+    <p>
+      <strong><%= @place.status %></strong>
+    </p>
+  </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @place.description %>
-</p>
+  <div class="col-md-9">
 
-<p>
-  <strong>Capacity:</strong>
-  <%= @place.capacity %>
-</p>
+    <span class="glyphicon glyphicon-stats" aria-hidden="true">&nbsp<strong>Catacterísticas</strong></span>
+    <p>
+      <strong>Description:</strong>
+      <%= @place.description %>
+    </p>
 
-<p>
-  <strong>Cost:</strong>
-  <%= @place.cost %>
-</p>
+    <p>
+      <strong>Capacity:</strong>
+      <%= @place.capacity %>
+    </p>
 
-<p>
-  <strong>Goods:</strong>
-  <%= @place.goods %>
-</p>
+    <p>
+      <strong>Cost:</strong>
+      <%= @place.cost %>
+    </p>
 
-<p>
-  <strong>Latitude:</strong>
-  <%= @place.latitude %>
-</p>
+    <p>
+      <strong>Goods:</strong>
+      <%= @place.goods %>
+    </p>
 
-<p>
-  <strong>Longitude:</strong>
-  <%= @place.longitude %>
-</p>
+    <p>
+      <strong>Latitude:</strong>
+      <%= @place.latitude %>
+    </p>
 
-<p>
-  <strong>Status:</strong>
-  <%= @place.status %>
-</p>
+    <p>
+      <strong>Longitude:</strong>
+      <%= @place.longitude %>
+    </p>
 
-<p>
-  <strong>Category:</strong>
-  <%= @place.category %>
-</p>
 
-<p>
-  <strong>Role:</strong>
-  <%= @place.role %>
-</p>
 
-<p>
-  <strong>Dayoff:</strong>
-  <%= @place.dayoff %>
-</p>
+    <p>
+      <strong>Category:</strong>
+      <%= @place.category.description %>
+    </p>
 
-<p>
-  <strong>Localization:</strong>
-  <%= @place.localization %>
-</p>
+    <p>
+      <strong>Role:</strong>
+      <%= @place.role.description %>
+    </p>
 
-<%= link_to 'Edit', edit_place_path(@place) %> |
-<%= link_to 'Back', places_path %>
+    <p>
+      <strong>Dayoff:</strong>
+      <%= @place.dayoff.day %>
+    </p>
+
+    <p>
+      <strong>Localization:</strong>
+      <%= @place.localization.state + ", " + @place.localization.campus %>
+    </p>
+  </div>
+</div>
+</div>
+

@@ -1,16 +1,15 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Listing Places</h1>
-
-<table>
+<div class="container">
+<h1>Lugares disponibles</h1>
+<div class="table-responsive">
+    <table class="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Capacity</th>
-      <th>Cost</th>
-      <th>Goods</th>
-      <th>Localization</th>
+      <th>Nombre</th>
+      <th>Descripción</th>
+      <th>Capacidad</th>
+      <th>Costo</th>
+      <th>Ubicación</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,7 +21,6 @@
         <td><%= place.description %></td>
         <td><%= place.capacity %></td>
         <td><%= place.cost %></td>
-        <td><%= place.goods %></td>
         <td><%= place.localization.campus %></td>
         <td><%= link_to 'Ver Detalle', place %></td>
         <td><%= link_to 'Reservar', reservation_place_path(place, :guest => params[:guest], :startdate => params[:startdate], :enddate => params[:enddate]) %></td>
@@ -30,12 +28,5 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<p><%= params[:category_id] %></p>
-<p><%= params[:startdate] %></p>
-<p><%= params[:enddate] %></p>
-<p><%= params[:guest] %></p>
-<p><%= @query %></p>
-<%= link_to 'New Place', new_place_path %>
+</div>
+</div>

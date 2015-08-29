@@ -4,8 +4,7 @@ class PlacesController < ApplicationController
   # GET /places
   # GET /places.json
   def index
-    @places = Place.all
-    # @query = Place.query("2015-08-27 07:00:00", "2015-08-27 08:00:00")
+    @places =  Place.free_places(params[:startdate], params[:enddate])
   end
 
   # GET /places/1
