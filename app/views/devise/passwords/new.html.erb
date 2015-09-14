@@ -1,16 +1,28 @@
-<h2>Forgot your password?</h2>
+<body class="login-content sw-toggled">
+  <div class="lc-block toggled">
+    <div class="card-header">
+      <img src="https://fs.itesm.mx/adfs/ls/MasterPages/logo.png" alt="Smiley face" width="155" height="32">
+    </div>
+    <br /><br /><br />
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <%= devise_error_messages! %>
+      <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu risus. Curabitur commodo lorem fringilla enim feugiat commodo sed ac lacus.</p>
+      <div class="input-group m-b-20">
+        <span class="input-group-addon"><i class="md md-mail"></i></span>
+        <div class="fg-line">
+          <%= f.email_field :email, class:'form-control', placeholder:'Correo electrónico' %>
+        </div>
+      </div>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+      <div class="actions">
+        <button type="submit" class="btn btn-login btn-danger btn-float waves-effect">
+          <i class="md md-arrow-forward"></i>
+        </button>
+      </div>
+    <% end %>
+    <ul class="login-navigation">
+      <li class="bgm-green"><%= render "devise/shared/login" %></li>
+      <li class="bgm-orange"><%= render "devise/shared/register" %></li>
+    </ul>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</body>

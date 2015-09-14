@@ -1,28 +1,42 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<body class="login-content sw-toggled">
+  <div class="lc-block toggled">
+    <div class="card-header">
+      <img src="https://fs.itesm.mx/adfs/ls/MasterPages/logo.png" alt="Smiley face" width="155" height="32">
     </div>
-  <% end -%>
+    <br /><br /><br />
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="input-group m-b-20">
+        <span class="input-group-addon"><i class="md md-mail"></i></span>
+        <div class="fg-line">
+          <%= f.email_field :email, class:'form-control', placeholder:'Correo electrónico' %>
+        </div>
+      </div>
+      <div class="input-group m-b-20">
+        <span class="input-group-addon"><i class="md md-accessibility"></i></span>
+        <div class="fg-line">
+          <%= f.password_field :password, autocomplete: "off", class:'form-control input-sm', placeholder:'Contraseña' %>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+      <% if devise_mapping.rememberable? -%>
+        <div class="checkbox">
+          <label>
+            <%= f.check_box :remember_me %>
+            <i class="input-helper"></i>
+            <%= f.label :remember_me %>
+          </label>
+        </div>
+      <% end -%>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
+      <div class="actions">
+        <button type="submit" class="btn btn-login btn-danger btn-float waves-effect">
+          <i class="md md-arrow-forward"></i>
+        </button>
+      </div>
+    <% end %>
+    <ul class="login-navigation">
+      <li class="bgm-red"><%= render "devise/shared/register" %></li>
+      <li class="bgm-orange"><%= render "devise/shared/password" %></li>
+    </ul>
   </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
-
-
+</body>

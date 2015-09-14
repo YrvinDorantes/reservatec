@@ -1,29 +1,40 @@
-<h2>Sign up</h2>
+<body class="login-content sw-toggled">
+  <div class="lc-block toggled">
+    <div class="card-header">
+      <img src="https://fs.itesm.mx/adfs/ls/MasterPages/logo.png" alt="Smiley face" width="155" height="32">
+    </div>
+    <br /><br /><br />
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <div class="input-group m-b-20">
+        <span class="input-group-addon"><i class="md md-mail"></i></span>
+        <div class="fg-line">
+          <%= f.email_field :email, class:'form-control', placeholder:'Correo electrónico' %>
+        </div>
+      </div>
+      <div class="input-group m-b-20">
+        <span class="input-group-addon"><i class="md md-accessibility"></i></span>
+        <div class="fg-line">
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "off", class:'form-control input-sm', placeholder:'Contraseña' %>
+        </div>
+      </div>
+      <div class="input-group m-b-20">
+        <span class="input-group-addon"><i class="md md-accessibility"></i></span>
+        <div class="fg-line">
+          <%= f.password_field :password_confirmation, autocomplete: "off", class:'form-control input-sm', placeholder:'Confirmación de contraseña' %>
+        </div>
+      </div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+      <div class="actions">
+        <button type="submit" class="btn btn-login btn-danger btn-float waves-effect">
+          <i class="md md-arrow-forward"></i>
+        </button>
+      </div>
+    <% end %>
+    <ul class="login-navigation">
+      <li class="bgm-green"><%= render "devise/shared/login" %></li>
+    </ul>
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</body>
