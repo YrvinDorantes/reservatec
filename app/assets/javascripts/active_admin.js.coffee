@@ -1,12 +1,3 @@
 #= require active_admin/base
 #= require admin/highcharts/highcharts.js
 #= require admin/modules/highcharts/exporting.js
-#= require vendors/bower_components/jquery/dist/jquery.min.js
-#= require vendors/bower_components/bootstrap/dist/js/bootstrap.min.js
-#= require vendors/bower_components/jquery.nicescroll/jquery.nicescroll.min.js
-#= require vendors/bower_components/Waves/dist/waves.min.js
-#= require vendors/bootstrap-growl/bootstrap-growl.min.js
-#= require vendors/bower_components/sweetalert/dist/sweetalert.min.js
-#= require vendors/bower_components/autosize/dist/autosize.min.js
-#= require js/functions.js
-#= require js/demo.js

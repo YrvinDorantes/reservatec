@@ -12,14 +12,17 @@
  *
  *= require_tree .
  *= require_self
- *= require jquery.datetimepicker
- *= require bootstrap-datepicker
- *= require fullcalendar/fullcalendar
  *= require vendors/bower_components/animate.css/animate.min
  *= require vendors/bower_components/sweetalert/dist/sweetalert-override.min
  *= require vendors/bower_components/material-design-iconic-font/css/material-design-iconic-font.min
+ *= require vendors/bower_components/fullcalendar/dist/fullcalendar.min.css
  *= require vendors/socicon/socicon.min
+ *= require vendors/bower_components/bootstrap-select/dist/css/bootstrap-select
+ *= require vendors/bower_components/nouislider/distribute/jquery.nouislider.min
+ *= require vendors/bower_components/summernote/dist/summernote
+ *= require vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min
+ *= require vendors/farbtastic/farbtastic
+ *= require vendors/chosen_v1.4.2/chosen.min
  *= require css/app.min.1
  *= require css/app.min.2
  */
-
