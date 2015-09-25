@@ -4,7 +4,11 @@ class PlacesController < ApplicationController
   # GET /places
   # GET /places.json
   def index
-    @places =  Place.free_places(params[:startdate], params[:enddate])
+      respond_to do |format|
+          @places =  Place.free_places(params[:startdate], params[:enddate])
+          format.html 
+          format.js
+      end
   end
 
   # GET /places/1

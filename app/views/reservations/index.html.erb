@@ -71,7 +71,7 @@
                 <div class="input-group form-group">
                   <span class="input-group-addon"><i class="md md-event"></i></span>
                   <div class="dtp-container dropdown fg-line">
-                    <input type="text" class="form-control date-time-picker" data-toggle="dropdown" placeholder="Click aquí..." aria-expanded="false">
+                    <input type="text" name="startdate" data-date-format="YYYY-MM-DD HH:MM" class="form-control date-time-picker" data-toggle="dropdown" placeholder="Click aquí..." aria-expanded="false" <%= @startdate %>>
                   </div>
                 </div>
               </div>
@@ -80,7 +80,7 @@
                 <div class="input-group form-group">
                   <span class="input-group-addon"><i class="md md-event"></i></span>
                   <div class="dtp-container dropdown fg-line">
-                    <input type="text" class="form-control date-time-picker" data-toggle="dropdown" placeholder="Click aquí..." aria-expanded="false">
+                    <input type="text" name="enddate" data-date-format="YYYY-MM-DD HH:MM" class="form-control date-time-picker" data-toggle="dropdown" placeholder="Click aquí..." aria-expanded="false" <%= @enddate %>>
                   </div>
                 </div>
               </div>
@@ -90,7 +90,7 @@
                 <p class="f-500 m-b-15 c-black">Invitados</p>
                 <div class="form-group">
                   <div class="fg-line">
-                    <textarea class="form-control" rows="5" placeholder="Invitados..."></textarea>
+                    <textarea name="guest" class="form-control" rows="5" placeholder="Invitados..." <%= @guest %>></textarea>
                   </div>
                 </div>
               </div>
@@ -511,15 +511,14 @@
   <script type="text/javascript">
 
     $(document).ready(function(){
-      $('#datetimepickerstart').datetimepicker();
+      $('#datetimepickerstart').datetimepicker({
+        format: 'yyyy-mm-dd H:i'    
+      });
+
       $('#datetimepickerend').datetimepicker();
       $('#datepicker').datepicker();
     });
 
   </script>
-  7
-
-
-
 
 </body>

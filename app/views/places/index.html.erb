@@ -6,7 +6,8 @@
 
 
   <div class="card">
-    <form >
+    
+      <%= form_tag places_path, remote: true, :method=>'get' do %>
       <div class="col-sm-3 m-b-20">
         <div class="form-group fg-line">
           <label>Categoría</label>
@@ -20,7 +21,7 @@
           <div class="input-group form-group">
             <span class="input-group-addon"><i class="md md-event"></i></span>
             <div class="dtp-container dropdown fg-line">
-            <input name="fein" type="text" class="form-control date-time-picker" data-toggle="dropdown" placeholder="Click aquí..." aria-expanded="false" <%= @fein %>>
+            <input name="startdate" type="text" data-date-format="YYYY-MM-DD HH:MM" class="form-control date-time-picker" data-toggle="dropdown" placeholder="Click aquí..." aria-expanded="false" <%= @startdate %>>
             </div>
           </div>
         </div>
@@ -29,7 +30,7 @@
           <div class="input-group form-group">
             <span class="input-group-addon"><i class="md md-event"></i></span>
             <div class="dtp-container dropdown fg-line">
-              <input name="fefi" type="text" class="form-control date-time-picker" data-toggle="dropdown" placeholder="Click aquí..." aria-expanded="false" <%= @fefi %>>
+              <input name="enddate" type="text" data-date-format="YYYY-MM-DD HH:MM" class="form-control date-time-picker" data-toggle="dropdown" placeholder="Click aquí..." aria-expanded="false" <%= @enddate %>>
             </div>
           </div>
         </div>
@@ -39,7 +40,7 @@
         <label>Invitados</label>
         <div class="dtp-container dropdown">
           <div class="fg-line">
-            <textarea class="form-control" rows="5" placeholder="Invitados..."></textarea>
+            <textarea name="guest" class="form-control" rows="5" placeholder="Invitados..." <%= @guest %>></textarea>
           </div>
         </div>
       </div>
@@ -49,38 +50,11 @@
           <button type="submit" class="btn btn-primary btn-sm m-t-10 waves-effect">Nueva Búsqueda...</button>
         </div>
       </div>
-    </form>
+      <% end %>
+   
   </div>
 </div>
 
-<h1>Salas disponibles</h1>
+<%= render 'list' %>
 
-<div class="table-responsive">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Nombre</th>
-        <th>Descripción</th>
-        <th>Capacidad</th>
-        <th>Costo</th>
-        <th>Ubicación</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @places.each do |place| %>
-      <tr>
-        <td><%= place.name %></td>
-        <td><%= place.description %></td>
-        <td><%= place.capacity %></td>
-        <td><%= place.cost %></td>
-        <td><%= place.localization.campus %></td>
-        <td><%= link_to 'Ver Detalle', place %></td>
-        <td><%= link_to 'Reservar', reservation_place_path(place, :guest => params[:guest], :startdate => params[:startdate], :enddate => params[:enddate]) %></td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
 </div>

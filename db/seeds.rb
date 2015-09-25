@@ -9,6 +9,8 @@ Place.destroy_all
 Category.destroy_all
 Dayoff.destroy_all
 Localization.destroy_all
+Reservation.destroy_all
+User.destroy_all
 
 Category.create(description:"Sala de juntas")
 Category.create(description:"Áreas recreativas")
@@ -59,21 +61,21 @@ Place.create(name:"Sala VITI", description:"", capacity:10, cost:0, goods:"Proye
 # 		reservable:Place.last
 # 		)
 # end
-Reservation.create(startdate:"2015-08-03 10:00:00", enddate:"2015-08-03 13:00:00", guest:"y.dorantes@itesm.mx, rafagarciafdz@itesm.mx", status:0, userapproved:"", user:User.first, reservable:Place.second)
-Reservation.create(startdate:"2015-08-05 10:00:00", enddate:"2015-08-05 13:00:00", guest:"y.dorantes@itesm.mx, rafagarciafdz@itesm.mx", status:0, userapproved:"", user:User.first, reservable:Place.second)
-Reservation.create(startdate:"2015-08-06 10:00:00", enddate:"2015-08-06 13:00:00", guest:"y.dorantes@itesm.mx, rafagarciafdz@itesm.mx", status:0, userapproved:"", user:User.first, reservable:Place.second)
-Reservation.create(startdate:"2015-08-10 10:00:00", enddate:"2015-08-10 13:00:00", guest:"y.dorantes@itesm.mx, rafagarciafdz@itesm.mx", status:0, userapproved:"", user:User.first, reservable:Place.second)
-Reservation.create(startdate:"2015-08-11 10:00:00", enddate:"2015-08-11 13:00:00", guest:"y.dorantes@itesm.mx, rafagarciafdz@itesm.mx", status:0, userapproved:"", user:User.first, reservable:Place.second)
-Reservation.create(startdate:"2015-08-12 10:00:00", enddate:"2015-08-12 13:00:00", guest:"y.dorantes@itesm.mx, rafagarciafdz@itesm.mx", status:0, userapproved:"", user:User.first, reservable:Place.second)
-Reservation.create(startdate:"2015-08-13 10:00:00", enddate:"2015-08-13 13:00:00", guest:"y.dorantes@itesm.mx, rafagarciafdz@itesm.mx", status:0, userapproved:"", user:User.first, reservable:Place.second)
-Reservation.create(startdate:"2015-08-14 10:00:00", enddate:"2015-08-14 13:00:00", guest:"y.dorantes@itesm.mx, rafagarciafdz@itesm.mx", status:0, userapproved:"", user:User.first, reservable:Place.second)
-Reservation.create(startdate:"2015-08-31 10:00:00", enddate:"2015-08-31 13:00:00", guest:"y.dorantes@itesm.mx, rafagarciafdz@itesm.mx", status:0, userapproved:"", user:User.first, reservable:Place.second)
-Reservation.create(startdate:"2015-08-31 08:00:00", enddate:"2015-08-31 10:00:00", guest:"y.dorantes@itesm.mx, rafagarciafdz@itesm.mx", status:0, userapproved:"", user:User.first, reservable:Place.third)
-Reservation.create(startdate:"2015-08-31 09:00:00", enddate:"2015-08-31 11:00:00", guest:"y.dorantes@itesm.mx, rafagarciafdz@itesm.mx", status:0, userapproved:"", user:User.first, reservable:Place.first)
-Reservation.create(startdate:"2015-08-31 08:00:00", enddate:"2015-08-31 09:00:00", guest:"y.dorantes@itesm.mx, rafagarciafdz@itesm.mx", status:0, userapproved:"", user:User.first, reservable:Place.first)
-Reservation.create(startdate:"2015-08-31 15:00:00", enddate:"2015-08-31 17:00:00", guest:"y.dorantes@itesm.mx, rafagarciafdz@itesm.mx", status:0, userapproved:"", user:User.first, reservable:Place.first)
-Reservation.create(startdate:"2015-08-31 15:00:00", enddate:"2015-08-31 17:00:00", guest:"y.dorantes@itesm.mx, rafagarciafdz@itesm.mx", status:0, userapproved:"", user:User.first, reservable:Place.third)
-Reservation.create(startdate:"2015-08-31 08:00:00", enddate:"2015-08-31 18:00:00", guest:"y.dorantes@itesm.mx, rafagarciafdz@itesm.mx", status:0, userapproved:"", user:User.first, reservable:Place.last)
+Reservation.create(startdate:"2015-09-03 10:00:00", enddate:"2015-09-03 13:00:00", guest:"y.dorantes@itesm.mx, rafagarciafdz@itesm.mx", status:0, userapproved:"", user:User.first, reservable:Place.second)
+Reservation.create(startdate:"2015-09-05 10:00:00", enddate:"2015-09-05 13:00:00", guest:"y.dorantes@itesm.mx, rafagarciafdz@itesm.mx", status:0, userapproved:"", user:User.first, reservable:Place.second)
+Reservation.create(startdate:"2015-09-06 10:00:00", enddate:"2015-09-06 13:00:00", guest:"y.dorantes@itesm.mx, rafagarciafdz@itesm.mx", status:0, userapproved:"", user:User.first, reservable:Place.second)
+Reservation.create(startdate:"2015-09-10 10:00:00", enddate:"2015-09-10 13:00:00", guest:"y.dorantes@itesm.mx, rafagarciafdz@itesm.mx", status:0, userapproved:"", user:User.first, reservable:Place.second)
+Reservation.create(startdate:"2015-09-11 10:00:00", enddate:"2015-09-11 13:00:00", guest:"y.dorantes@itesm.mx, rafagarciafdz@itesm.mx", status:0, userapproved:"", user:User.first, reservable:Place.second)
+Reservation.create(startdate:"2015-09-12 10:00:00", enddate:"2015-09-12 13:00:00", guest:"y.dorantes@itesm.mx, rafagarciafdz@itesm.mx", status:0, userapproved:"", user:User.first, reservable:Place.second)
+Reservation.create(startdate:"2015-09-13 10:00:00", enddate:"2015-09-13 13:00:00", guest:"y.dorantes@itesm.mx, rafagarciafdz@itesm.mx", status:0, userapproved:"", user:User.first, reservable:Place.second)
+Reservation.create(startdate:"2015-09-14 10:00:00", enddate:"2015-09-14 13:00:00", guest:"y.dorantes@itesm.mx, rafagarciafdz@itesm.mx", status:0, userapproved:"", user:User.first, reservable:Place.second)
+Reservation.create(startdate:"2015-09-30 10:00:00", enddate:"2015-09-30 13:00:00", guest:"y.dorantes@itesm.mx, rafagarciafdz@itesm.mx", status:0, userapproved:"", user:User.first, reservable:Place.second)
+Reservation.create(startdate:"2015-09-30 08:00:00", enddate:"2015-09-30 10:00:00", guest:"y.dorantes@itesm.mx, rafagarciafdz@itesm.mx", status:0, userapproved:"", user:User.first, reservable:Place.third)
+Reservation.create(startdate:"2015-09-30 09:00:00", enddate:"2015-09-30 11:00:00", guest:"y.dorantes@itesm.mx, rafagarciafdz@itesm.mx", status:0, userapproved:"", user:User.first, reservable:Place.first)
+Reservation.create(startdate:"2015-09-30 08:00:00", enddate:"2015-09-30 09:00:00", guest:"y.dorantes@itesm.mx, rafagarciafdz@itesm.mx", status:0, userapproved:"", user:User.first, reservable:Place.first)
+Reservation.create(startdate:"2015-09-30 15:00:00", enddate:"2015-09-30 17:00:00", guest:"y.dorantes@itesm.mx, rafagarciafdz@itesm.mx", status:0, userapproved:"", user:User.first, reservable:Place.first)
+Reservation.create(startdate:"2015-09-30 15:00:00", enddate:"2015-09-30 17:00:00", guest:"y.dorantes@itesm.mx, rafagarciafdz@itesm.mx", status:0, userapproved:"", user:User.first, reservable:Place.third)
+Reservation.create(startdate:"2015-09-30 08:00:00", enddate:"2015-09-30 18:00:00", guest:"y.dorantes@itesm.mx, rafagarciafdz@itesm.mx", status:0, userapproved:"", user:User.first, reservable:Place.last)
 #Reservation.create(startdate:Time.now, enddate:Time.now, guest:"y.dorantes@itesm.mx, rafagarciafdz@itesm.mx", status:0, userapproved:"laura@itesm.mx", user:User.second, reservable:Place.second)
 #Reservation.create(startdate:Time.now, enddate:Time.now, guest:"y.dorantes@itesm.mx, rafagarciafdz@itesm.mx", status:0, userapproved:"laura@itesm.mx", user:User.third, reservable:Place.third)AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+#AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
